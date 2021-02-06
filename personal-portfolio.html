@@ -5,27 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="personal-portfolio.css"
+    />
 </head>
 <body>
     <section>
-        <nav id="navbar">
-            
+        <nav id="navbar" class="nav">
+            <ul id="nav-list">
+                <li>
+                  <a href="#welcome-section">
+                    about
+                  </a>
+                </li>
+                <li>
+                  <a href="#projects">
+                    projects
+                  </a>
+                </li>
+                <li>
+                  <a href="#links">
+                    get-in-touch
+                  </a>
+                </li>
+            </ul>
         </nav>
     </section>
     <section id="welcome-section">
         <h1>
-            Contains Text
+            alyce-adams
         </h1>
+        <p>
+          /* web developer in training */
+        </p>
     </section>
     <section id="projects">
-        <div class="project-tile">
-            <a href="www.google.com"><p>
-                project tile with link
-            </p></a>
+      <h2 class="section-header"> projects </h2>
+        <div id="project-grid">
+          <a href="www.google.com">  
+            <div class="project-tile">
+            </div>
+          </a>
+          <a href="www.google.com">  
+            <div class="project-tile">
+            </div>
+          </a>
+          <a href="www.google.com">  
+            <div class="project-tile">
+            </div>
+          </a>
         </div>
     </section>
     <section id="links">
-        <a id="profile-link" href=""></a>
+      <h2 class="section-header">get-in-touch</h2>
+      <div id="link-grid">
+        <a href="www.google.com">  
+            <div class="link-tile">
+            </div>
+          </a>
+          <a href="www.google.com">  
+            <div class="link-tile">
+            </div>
+          </a>
+          <a href="www.google.com">  
+            <div class="link-tile">
+            </div>
+          </a>
+      </div>
     </section>
-</body>
+  </body>
 </html>
