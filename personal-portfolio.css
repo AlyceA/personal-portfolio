@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+    color: #F5F5F5;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #F5F5F5;
+  }
+  
+  h1 {
+    font-size: 5em;
+  }
+  
+  ul{
+    list-style: none;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #059E8F;
+    height: 4em;
+    position: fixed;
+  }
+  
+  #nav-list {
+    display: flex;
+  }
+  
+  #welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #323833;
+    height: 60vh;
+  }
+  
+  .section-header {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #projects {
+    background-color: #006A75;
+    height: 60vh;
+  }
+  
+  #project-grid {
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .project-tile {
+    background-color: #32383350; 
+    height: 20em;
+    width: 20em;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #links {
+    background-color: #323833;
+    height: 60vh;
+  }
+  
+  #link-grid {
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .link-tile {
+    background-color: #FFB70050;
+    height: 20em;
+    width: 20em;
+    justify-content: center;
+    align-items: center;
+  }
