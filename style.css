@@ -3,6 +3,10 @@
     padding: 0;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: sans-serif;
     color: #F5F5F5;
@@ -14,7 +18,7 @@
   }
   
   h1 {
-    font-size: 5em;
+    font-size: 5rem;
   }
   
   ul{
@@ -33,6 +37,13 @@
   
   .nav-list {
     display: flex;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  .nav-list a:hover {
+    color: #323833;
+    transform: translate(1.25, 50%);
   }
 
   li {
@@ -77,22 +88,24 @@
   
   #links {
     background-color: #323833;
-    height: 60vh;
+    height: 30vh;
   }
   
   #link-grid {
     height: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
   
   .link-tile {
-    background-color: #FFB70050;
-    height: 20em;
-    width: 20em;
+    /* background-color: #FFB70050; */
+    /* height: 20em;
+    width: 20em; */
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
   }
 
   footer {
