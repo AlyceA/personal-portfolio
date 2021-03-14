@@ -100,3 +100,9 @@ sumTwoThings('2', '2'); // returns '22' because of concatenation - combining two
 sumTwoThings('4', 5); // returns '45' because of type coersion - turns 5 into a string.
 sumTwoThings('8', true); // returns '8true' because of type coersion - turns true into a string.
 
+// Arrow Functions - takes its parameter to the left of the arrow, then returns the value on the right hand side of the arrow. Can do it on one line.
+
+const theFunction = () => 'I am an arrow function';
+
+// find is a higher order function. It accepts another function as a parameter.
+// filter, map, and reduce are the most popular higer order functions(HOF), but forEach, every, find, and some are also HOFs.
