@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap');
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
@@ -26,8 +29,9 @@
   }
 
   body {
-    font-family: sans-serif;
+    font-family: 'Assistant', sans-serif;
     color: #F5F5F5;
+    overflow: hidden;
   }
   
   a {
@@ -74,6 +78,47 @@
     flex-direction: column;
     background: linear-gradient(to top right,#686e69,#323833);
     height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 40vw;
+    height: 60vh;
+    margin-top: 40px;
+  }
+
+  .panel {
+    display: flex;
+    justify-content: center;
+    background-size: 10vw 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    border-radius: 50px;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+  }
+
+  .panel h3 {
+    font-size: 25px;
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .panel.active {
+    flex: 5;
+  }
+
+  .panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
   }
   
   .section-header {
