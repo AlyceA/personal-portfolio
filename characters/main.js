@@ -4,28 +4,23 @@ const mainContent = document.querySelector('main');
 
 const mainHeader = document.createElement('header');
 
+document.body.insertBefore(mainHeader, mainContent);
+
 const maleButton = document.createElement('button');
 maleButton.textContent = "Male Characters";
-maleButton.addEventListener('click', () => {
-    populateDOM(maleCharacters)
-});
+maleButton.addEventListener('click', () => populateDOM(maleCharacters));
 
 const femaleButton = document.createElement('button');
 femaleButton.textContent = "Female Characters";
-femaleButton.addEventListener('click', () => {
-    populateDOM(femaleCharacters)
-});
+femaleButton.addEventListener('click', () => populateDOM(femaleCharacters));
 
 const nbButton = document.createElement('button');
 nbButton.textContent = "Non-Binary Characters";
-nbButton.addEventListener('click', () => {
-    populateDOM(nbCharacters)
-});
+nbButton.addEventListener('click', () => populateDOM(nbCharacters));
 
 mainHeader.appendChild(maleButton);
 mainHeader.appendChild(femaleButton);
 mainHeader.appendChild(nbButton);
-document.body.insertBefore(mainHeader, mainContent);
 
 const maleCharacters = people.filter(person => person.gender === "male");
 const femaleCharacters = people.filter(person => person.gender === "female");
@@ -36,6 +31,7 @@ const nbCharacters = people.filter(person => {
 });
 
 function populateDOM(characters) {
+    removeChildren(mainContent)
     characters.forEach(person => {
         const charFigure = document.createElement('figure');
         const charImage = document.createElement('img');
@@ -59,3 +55,9 @@ function getLastNumber(url) {
     }
     return url.slice(start, end)
 };
+
+function removeChildren(container) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
+}
