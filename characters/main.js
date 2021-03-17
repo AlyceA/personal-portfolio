@@ -10,7 +10,21 @@ maleButton.addEventListener('click', () => {
     populateDOM(maleCharacters)
 });
 
+const femaleButton = document.createElement('button');
+femaleButton.textContent = "Female Characters";
+femaleButton.addEventListener('click', () => {
+    populateDOM(femaleCharacters)
+});
+
+const nbButton = document.createElement('button');
+nbButton.textContent = "Non-Binary Characters";
+nbButton.addEventListener('click', () => {
+    populateDOM(nbCharacters)
+});
+
 mainHeader.appendChild(maleButton);
+mainHeader.appendChild(femaleButton);
+mainHeader.appendChild(nbButton);
 document.body.insertBefore(mainHeader, mainContent);
 
 const maleCharacters = people.filter(person => person.gender === "male");
@@ -45,5 +59,3 @@ function getLastNumber(url) {
     }
     return url.slice(start, end)
 };
-
-console.log(nbCharacters);
