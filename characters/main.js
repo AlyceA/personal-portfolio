@@ -15,7 +15,7 @@ femaleButton.textContent = "Female Characters";
 femaleButton.addEventListener('click', () => populateDOM(femaleCharacters));
 
 const nbButton = document.createElement('button');
-nbButton.textContent = "Non-Binary Characters";
+nbButton.textContent = "Other Characters";
 nbButton.addEventListener('click', () => populateDOM(nbCharacters));
 
 mainHeader.appendChild(maleButton);
@@ -25,7 +25,7 @@ mainHeader.appendChild(nbButton);
 const maleCharacters = people.filter(person => person.gender === "male");
 const femaleCharacters = people.filter(person => person.gender === "female");
 const nbCharacters = people.filter(person => {
-    if (person.gender === "n/a" || person.gender === "none") {
+    if (person.gender === "n/a" || person.gender === "none" || person.gender === "hermaphrodite") {
         return person
     }
 });
