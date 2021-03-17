@@ -2,6 +2,14 @@ import { people } from '../data/people.js';
 
 const mainContent = document.querySelector('main');
 
+const maleCharacters = people.filter(person => person.gender === "male");
+const femaleCharacters = people.filter(person => person.gender === "female");
+const nbCharacters = people.filter(person => {
+    if (person.gender === "n/a" || person.gender === "none") {
+        return person
+    }
+});
+
 people.forEach(person => {
     const charFigure = document.createElement('figure');
     const charImage = document.createElement('img');
@@ -24,3 +32,5 @@ function getLastNumber(url) {
     }
     return url.slice(start, end)
 };
+
+console.log(nbCharacters);
