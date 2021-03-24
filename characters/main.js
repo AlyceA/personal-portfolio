@@ -1,63 +1,35 @@
 import { people } from '../data/people.js';
 
 const mainContent = document.querySelector('main');
+const screenOne = document.querySelector('#screen-1');
+const screenTwo = document.querySelector('#screen-2');
 
-const mainHeader = document.createElement('header');
+people.forEach(person => {
+    
+    const charFigure = document.createElement('figure')
+    const charImg = document.createElement('img')
+    let charNum = getLastNum(person.url)
+    charImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+    const charCaption = document.createElement('figcaption')
 
-document.body.insertBefore(mainHeader, mainContent);
+    charCaption.textContent = person.name
 
-const maleButton = document.createElement('button');
-maleButton.textContent = "Male Characters";
-maleButton.addEventListener('click', () => populateDOM(maleCharacters));
-
-const femaleButton = document.createElement('button');
-femaleButton.textContent = "Female Characters";
-femaleButton.addEventListener('click', () => populateDOM(femaleCharacters));
-
-const nbButton = document.createElement('button');
-nbButton.textContent = "Other Characters";
-nbButton.addEventListener('click', () => populateDOM(nbCharacters));
-
-mainHeader.appendChild(maleButton);
-mainHeader.appendChild(femaleButton);
-mainHeader.appendChild(nbButton);
-
-const maleCharacters = people.filter(person => person.gender === "male");
-const femaleCharacters = people.filter(person => person.gender === "female");
-const nbCharacters = people.filter(person => {
-    if (person.gender === "n/a" || person.gender === "none" || person.gender === "hermaphrodite") {
-        return person
+    charFigure.appendChild(charImg)
+    charFigure.appendChild(charCaption)
+    
+    if(charNum < 45) {
+        screenOne.appendChild(charFigure)
     }
-});
+    else {
+        screenTwo.appendChild(charFigure);
+    }
+})
 
-function populateDOM(characters) {
-    removeChildren(mainContent)
-    characters.forEach(person => {
-        const charFigure = document.createElement('figure');
-        const charImage = document.createElement('img');
-        let charNum = getLastNumber(person.url);
-        charImage.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`;
-        const charCaption = document.createElement('figcaption');
-
-        charCaption.textContent = person.name;
-
-        charFigure.appendChild(charImage);
-        charFigure.appendChild(charCaption);
-        mainContent.appendChild(charFigure);
-    })
-}
-
-function getLastNumber(url) {
+function getLastNum(url) {
     let end = url.lastIndexOf('/')
     let start = end - 2
     if (url.charAt(start) === '/') {
         start++
     }
     return url.slice(start, end)
-};
-
-function removeChildren(container) {
-    while (container.firstChild) {
-        container.removeChild(container.firstChild)
-    }
 }
