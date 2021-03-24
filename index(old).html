@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="style.css"
+    />
+</head>
+<body>
+    <section>
+        <nav id="navbar" class="nav">
+            <ul class="nav-list">
+                <li>
+                  <a href="#welcome-section">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#projects">
+                    Projects
+                  </a>
+                </li>
+                <li>
+                  <a href="#links">
+                    Get in Touch
+                  </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <section id="welcome-section">
+        <h1>
+          Alyce Adams
+        </h1>
+        <div class="container">
+          <div class="panel active" style="background-image: url(https://images.unsplash.com/photo-1539319136574-7934afd94566?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80);">
+            <h3>Adobe Illustrator</h3>
+          </div>
+          <div class="panel" style="background-image: url(https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1427&q=80);">
+            <h3>HTML</h3>
+          </div>
+          <div class="panel" style="background-image: url(https://images.unsplash.com/photo-1503169483-419b860b9208?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1067&q=80);">
+            <h3>CSS</h3>
+          </div>
+          <div class="panel" style="background-image: url(https://images.unsplash.com/photo-1489648022186-8f49310909a0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1426&q=80);">
+            <h3>JavaScript</h3>
+          </div>
+        </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-header"></h2>
+        <div id="project-grid">
+          <a href="https://codepen.io/alycea/pen/bGwZgQR" target="_blank">  
+            <div id="personal-tech"class="project-tile">
+              <img class="project-thumbnail" src="images/Untitled-3.png"/>
+            </div>
+            <div class="project-cap">
+              <h4>Personal Interest Project</h4>
+            </div>
+          </a>
+          <a href="images/Vector Shape Creation.pdf" target="_blank">  
+            <div class="project-tile">
+              <img class="project-thumbnail" src="images/Untitled-1.png"/>
+            </div>
+            <div class="project-cap">
+              <h4>Shape Creation</h4>
+            </div>
+          </a>
+          <a href="images/Space Element.pdf" target="_blank">  
+            <div class="project-tile">
+              <img class="project-thumbnail" src="images/Untitled-2.png"/>
+            </div>
+            <div class="project-cap">
+              <h4>Space Elements</h4>
+            </div>
+          </a>
+        </div>
+    </section>
+
+    <section id="links">
+      <h2 class="section-header">Get in Touch</h2>
+      <div id="link-grid">
+        <a id="profile-link" href="https://github.com/AlyceA" target="_blank">  
+            <div class="link-tile">
+              <img src="https://img.icons8.com/doodle/2x/github--v1.png"/>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/alyce-adams-620438144/" target="_blank">  
+            <div id="linkedin"class="link-tile">
+              <img src="https://img.icons8.com/doodle/2x/linkedin--v2.png"/>
+            </div>
+          </a>
+          <a href="mailto: alyad101@gmail.com">
+            <div id="email" class="link-tile">
+              <img src="https://img.icons8.com/doodle/2x/gmail.png"/>
+            </div>
+          </a>
+      </div>
+    </section>
+
+  </body>
+  <footer>
+    <p>Don't change your major, fix your CSS.</p>
+  </footer>
+  <script src="expanding-cards.js" type="module"></script>
+</html>

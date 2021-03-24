@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap');
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,7 +8,110 @@
     scroll-behavior: smooth;
   }
 
-  @media (max-width: 100em) {
+  /* CSS to make a hamburger nav menu https://codepen.io/erikterwan/pres/EVzeRP */
+
+  body {
+    font-family: acumin-pro-wide, sans-serif;
+    font-size: x-large;
+  }
+
+  #home {
+    display: flex;
+  }
+
+  #name-logo {
+    display: flex;
+    background:#7F807A;
+    height: 100vh;
+    width: 50vw;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: acumin-pro-wide, sans-serif;
+    font-weight: bolder;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-grow: 1;
+    height: 33.33vh;
+    width: 50vw;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #coding-projects {
+    background: #FBE195;
+  }
+
+  #design-projects {
+    background: #CCCBC2;
+  }
+
+  #contact {
+    background: #D9B2B0;
+  }
+
+  #coding-section {
+    background: #FBE195;
+    color: white;
+    height: 100vh;
+  }
+
+  h2 {
+    text-align: center;
+    height: 10vh;
+  }
+
+  #design-section {
+    background: #CCCBC2;
+    color: white;
+    height: 100vh;
+  }
+
+  #contact-section {
+    background: #D9B2B0;
+    color: white;
+    height: 30vh;
+  }
+
+  #contact-grid {
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .project-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* @media (max-width: 100em) {
     html {
       font-size: 80%;
     }
@@ -29,7 +130,7 @@
   }
 
   body {
-    font-family: 'Assistant', sans-serif;
+    font-family: acumin-pro-wide, sans-serif;
     color: #F5F5F5;
   }
   
@@ -181,4 +282,4 @@
     display: flex;
     justify-content: center;
     padding: 1rem;
-  }
+  } */
