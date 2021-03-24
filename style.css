@@ -28,6 +28,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 5px solid white;
   }
 
   #logo {
@@ -50,6 +51,7 @@
     color: white;
     text-align: center;
     justify-content: center;
+    border: 5px solid white;
   }
 
   #coding-projects {
