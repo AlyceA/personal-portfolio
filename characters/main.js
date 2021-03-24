@@ -1,9 +1,10 @@
 import { people } from '../data/people.js';
 
 const mainContent = document.querySelector('main');
-const screenOne = document.querySelector('#screen-1');
-const screenTwo = document.querySelector('#screen-2');
 
+const screen = document.querySelector('#screen');
+
+// Populates the page with character images and names
 people.forEach(person => {
     
     const charFigure = document.createElement('figure')
@@ -16,15 +17,12 @@ people.forEach(person => {
 
     charFigure.appendChild(charImg)
     charFigure.appendChild(charCaption)
-    
-    if(charNum < 45) {
-        screenOne.appendChild(charFigure)
-    }
-    else {
-        screenTwo.appendChild(charFigure);
-    }
+
+    screen.appendChild(charFigure)
 })
 
+
+// Gets the number of the character from the urls (includes double digits)
 function getLastNum(url) {
     let end = url.lastIndexOf('/')
     let start = end - 2
@@ -34,7 +32,39 @@ function getLastNum(url) {
     return url.slice(start, end)
 }
 
-function addStarField(element, numStars) {
+
+// Should listen for a click on a charFigure, then run populateDOM with the appropriate character informtion
+addEventListener('click', () => console.log('clicked'))
+
+
+// Should clear the contents of the page, then generate the "Profile View" of the clicked person
+//"Profile View" includes a profile picture, physical attributes (height, mass, hair color, skin color, eye color, gender, species), basic info (name, birth year, homeworld), wanted by (see function getWantedBy()), and bounty 
+function populateDOM(profile) {
+    removeChildren(mainContent)
+    const profilePic = charFigure
+    const physicalAtt = document.createElement('div')
+    const basicInfo = document.createElement('div')
+    const wantedBy = getWantedBy()
+    const bounty = getBounty()
+}
+
+
+// Randomly select a person from a small list
+// List: Darth Vader, Boba Fett, Darth Maul, Grievous, Greedo, IG-88, Jabba Desilijic Tiure, Han Solo, Bossk, Zam Wesell
+function getWantedBy() {
+
+}
+
+
+// Generates a random bounty number
+function getBounty() {
+    let bounty = Math.floor(Math.random() * 10000)
+    return bounty
+}
+
+
+// Right now, this generates a star field. I want to modify it to generate a grid in the background.
+/* function addStarField(element, numStars) {
     element.style.setProperty('background-color', 'black')
     for (let i=0; i < numStars; i++) {
         let star = document.createElement('div')
@@ -60,4 +90,4 @@ function getRandomPosition() {
     return [randomX, randomY]
 }
 
-addStarField(document.querySelector('body'), 400);
+addStarField(document.querySelector('body'), 400); */
