@@ -2,35 +2,67 @@ import { planets } from '../data/planets.js';
 
 const mainContent = document.querySelector('main');
 const screen = document.querySelector('#screen');
-const planetLeft = document.querySelector('#leftPlanet');
-const planetMain = document.querySelector('#mainPlanet');
-const planetRight = document.querySelector('#rightPlanet');
-const leftArrow = document.querySelector('#leftArrow');
-const rightArrow = document.querySelector('#rightArrow');
+const planetFigure = document.querySelectorAll('.planet');
 
-let planetNum = 1
 
-if(document.getElementById().clicked == true) {
-    console.log('left was clicked');
+
+function addLeftClass() {
+    planetFigure.forEach((planet) => {
+        removeActiveClasses()
+        planet.classList.add('left')
+    })
 }
 
-// mainPlanet(planets);
+function addMainClass() {
+    planetFigure.forEach((planet) => {
+        removeActiveClasses()
+        planet.classList.add('main')
+    })
+}
 
-// function mainPlanet(planets) {
-//     planets.forEach(planet => {
-//         const planetImg = document.createElement('img');
-//         const planetName = document.createElement('div');
-//         let planetNum = getLastNumber(planet.url);
-//         planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
+function addRightClass() {
+    planetFigure.forEach((planet) => {
+        removeActiveClasses()
+        planet.classList.add('right')
+    })
+}
 
-//         planetName.textContent = planet.name;
-//         planetMain.appendChild(planetImg);
-//         planetMain.appendChild(planetName);
+function removeActiveClasses() {
+    planetFigure.forEach(planet => {
+        planet.classList.remove('left' || 'main' || 'right')
+    })
+}
 
-//         console.log(planetName);
-//     })
+
+// const planetLeft = document.querySelector('#leftPlanet');
+// const planetMain = document.querySelector('#mainPlanet');
+// const planetRight = document.querySelector('#rightPlanet');
+// const leftArrow = document.querySelector('#leftArrow');
+// const rightArrow = document.querySelector('#rightArrow');
+
+// let planetNum = 1
+
+// if(document.getElementById().clicked == true) {
+//     console.log('left was clicked');
 // }
 
-// display 3 planets at a time, middle one larger (flexgrow/shrink) with name below it, when the arrow on the left is clicked, the planet on the left moves to the middle position and vice-versa for the right arrow. When there are no more planets available, the arrow should disappear and there should only be two planets on the screen.
+// // mainPlanet(planets);
 
-// if there's time, can add rotation period, orbital period, diameter, climate, gravity, terrain, surface water, population under middle planet
+// // function mainPlanet(planets) {
+// //     planets.forEach(planet => {
+// //         const planetImg = document.createElement('img');
+// //         const planetName = document.createElement('div');
+// //         let planetNum = getLastNumber(planet.url);
+// //         planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
+
+// //         planetName.textContent = planet.name;
+// //         planetMain.appendChild(planetImg);
+// //         planetMain.appendChild(planetName);
+
+// //         console.log(planetName);
+// //     })
+// // }
+
+// // display 3 planets at a time, middle one larger (flexgrow/shrink) with name below it, when the arrow on the left is clicked, the planet on the left moves to the middle position and vice-versa for the right arrow. When there are no more planets available, the arrow should disappear and there should only be two planets on the screen.
+
+// // if there's time, can add rotation period, orbital period, diameter, climate, gravity, terrain, surface water, population under middle planet

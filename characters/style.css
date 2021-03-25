@@ -17,6 +17,25 @@ body {
     align-items: flex-start;
 }
 
+#buttonArea {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #27545950;
+    color: white;
+    font-family: aviano-future, sans-serif;
+    border-radius: 25px;
+    border: 5px solid #275459;
+    cursor: pointer;
+}
+
 .screen {
     display: flex;
     flex-wrap: wrap;
