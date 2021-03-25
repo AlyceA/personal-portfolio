@@ -8,6 +8,7 @@ const screen = document.querySelector('#screen');
 people.forEach(person => {
     
     const charFigure = document.createElement('figure')
+    charFigure.classList.add('profileTile')
     const charImg = document.createElement('img')
     let charNum = getLastNum(person.url)
     charImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
@@ -34,20 +35,29 @@ function getLastNum(url) {
 
 
 // Should listen for a click on a charFigure, then run populateDOM with the appropriate character informtion
-addEventListener('click', () => console.log('clicked'))
+
+//creates a static NodeList
+const profileSelect = document.querySelectorAll('figure');
+//creates an array from the static NodeList
+const profileList = Array.from(profileSelect);
+
+//listens for any click in the body of the page
+document.body.addEventListener('click', listen, false);
+//if the click is on an image within a figure, the function will log the img src (which we can use to identify which character was clicked)
+function listen(event) {
+    if (event.target.matches('figure')) return;
+    console.log(event.target);
+}
 
 
 // Should clear the contents of the page, then generate the "Profile View" of the clicked person
 //"Profile View" includes a profile picture, physical attributes (height, mass, hair color, skin color, eye color, gender, species), basic info (name, birth year, homeworld), wanted by (see function getWantedBy()), and bounty 
-function populateDOM(profile) {
-    removeChildren(mainContent)
-    const profilePic = charFigure
+function populateDOM(person) {
     const physicalAtt = document.createElement('div')
     const basicInfo = document.createElement('div')
     const wantedBy = getWantedBy()
     const bounty = getBounty()
 }
-
 
 // Randomly select a person from a small list
 // List: Darth Vader, Boba Fett, Darth Maul, Grievous, Greedo, IG-88, Jabba Desilijic Tiure, Han Solo, Bossk, Zam Wesell

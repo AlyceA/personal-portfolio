@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 80vw;
-    height: 90vh;
+    height: 80vh;
     border: 5px solid #73BFBF50;
     border-bottom-right-radius: 20px; 
     border-top-left-radius: 20px;
@@ -46,12 +46,13 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 10px;
+    padding-top: 20px;
 }
 
 header {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 figure > img {
@@ -64,4 +65,5 @@ figure > img {
 figcaption {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
