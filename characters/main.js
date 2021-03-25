@@ -23,6 +23,10 @@ people.forEach(person => {
     screen.appendChild(charFigure)
 })
 
+const allButton = document.createElement('button');
+allButton.textContent = "All Characters";
+allButton.addEventListener('click', () => populateDOM(allCharacters));
+
 const maleButton = document.createElement('button');
 maleButton.textContent = "Male Characters";
 maleButton.addEventListener('click', () => populateDOM(maleCharacters));
@@ -35,10 +39,12 @@ const nbButton = document.createElement('button');
 nbButton.textContent = "Other Characters";
 nbButton.addEventListener('click', () => populateDOM(nbCharacters));
 
+buttonArea.appendChild(allButton);
 buttonArea.appendChild(maleButton);
 buttonArea.appendChild(femaleButton);
 buttonArea.appendChild(nbButton);
 
+const allCharacters = people.filter(person => person.gender !== "");
 const maleCharacters = people.filter(person => person.gender === "male");
 const femaleCharacters = people.filter(person => person.gender === "female");
 const nbCharacters = people.filter(person => {
