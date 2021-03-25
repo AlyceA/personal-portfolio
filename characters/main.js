@@ -23,6 +23,7 @@ people.forEach(person => {
     screen.appendChild(charFigure)
 })
 
+//buttons to populateDOM with appropriate filters
 const allButton = document.createElement('button');
 allButton.textContent = "All Characters";
 allButton.addEventListener('click', () => populateDOM(allCharacters));
@@ -44,6 +45,8 @@ buttonArea.appendChild(maleButton);
 buttonArea.appendChild(femaleButton);
 buttonArea.appendChild(nbButton);
 
+
+//filters by gender
 const allCharacters = people.filter(person => person.gender !== "");
 const maleCharacters = people.filter(person => person.gender === "male");
 const femaleCharacters = people.filter(person => person.gender === "female");
@@ -53,6 +56,8 @@ const nbCharacters = people.filter(person => {
     }
 });
 
+
+//removes children from container, then repopulates DOM
 function populateDOM(characters) {
     removeChildren(screen)
     characters.forEach(person => {

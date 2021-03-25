@@ -4,6 +4,8 @@ const mainContent = document.querySelector('main');
 const screen = document.querySelector('#screen');
 const planetFigure = document.querySelectorAll('.planet');
 
+let planetNum = 2;
+
 
 
 function addLeftClass() {
