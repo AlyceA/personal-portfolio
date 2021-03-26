@@ -4,10 +4,59 @@ const mainContent = document.querySelector('main');
 const screen = document.querySelector('#screen');
 const planetFigure = document.querySelectorAll('.planet');
 
-let planetNum = 2;
+let planetNum = 12;
+
+function increase() {
+    for (let num = 0; num < 1; num++) {
+        planetNum = planetNum + 1;
+    }
+    
+}
+
+populateLeft();
+console.log(planetNum);
+
+function populateLeft() {
+    const planetImg = document.createElement('img');
+    planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
+
+    increase()
+    addLeftClass();
+    planetFigure.appendChild(planetImg);
+}
+
+function populateRight() {
+    const planetImg = document.createElement('img');
+    planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
+
+    addRightClass();
+    mainContent.appendChild(planetFigure);
+    planetFigure.appendChild(planetImg);
+}
+
+function populateMain() {
+    const planetImg = document.createElement('img');
+    const planetName = document.createElement('div');
+    planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
+    
+    planetName.textContent = planet.name;
+    planetFigure.appendChild(planetImg);
+    PlanetFigure.appendChild(planetName);
+}
 
 
+// planets.forEach(planet => {
+//     const planetImg = document.createElement('img');
+//     const planetName = document.createElement('div');
+//     planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
+    
+//     planetName.textContent = planet.name;
+//     screen.appendChild(planetImg);
+//     screen.appendChild(planetName);
+//         })
 
+
+// should add 'left' class to planetFigure
 function addLeftClass() {
     planetFigure.forEach((planet) => {
         removeActiveClasses()
@@ -15,6 +64,7 @@ function addLeftClass() {
     })
 }
 
+// should add 'main' class to planetFigure
 function addMainClass() {
     planetFigure.forEach((planet) => {
         removeActiveClasses()
@@ -22,6 +72,7 @@ function addMainClass() {
     })
 }
 
+// should add 'right' class to planetFigure
 function addRightClass() {
     planetFigure.forEach((planet) => {
         removeActiveClasses()
@@ -29,6 +80,7 @@ function addRightClass() {
     })
 }
 
+// removes classes from planetFigure
 function removeActiveClasses() {
     planetFigure.forEach(planet => {
         planet.classList.remove('left' || 'main' || 'right')
