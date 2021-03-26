@@ -4,7 +4,7 @@
 }
 
 body {
-    background: #0C2126;
+    background-image: url(../images/GRID.svg);
     color: white;
     font-family: aviano-future, sans-serif;
     font-weight: 700;
