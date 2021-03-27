@@ -3,97 +3,98 @@ import { planets } from '../data/planets.js';
 const mainContent = document.querySelector('main');
 const screen = document.querySelector('#screen');
 const planetFigure = document.querySelectorAll('.planet');
+const buttonLeft = document.querySelector('#buttonLeft');
+const buttonRight = document.querySelector('#buttonRight');
 
 let planetNum = 12;
 
+buttonRight.addEventListener('click', increase);
+buttonLeft.addEventListener('click', decrease);
+
+console.log(planetNum);
+
 function increase() {
-    for (let num = 0; num < 1; num++) {
-        planetNum = planetNum + 1;
-    }
-    
+  for (let num = 0; num < 1; num++) {
+    planetNum = planetNum + 1;
+  }
+  console.log(planetNum);
 }
 
 function decrease() {
-    for (let num = 2; num > 1; num--) {
-        planetNum = planetNum - 1;
-    }
-    
+  for (let num = 2; num > 1; num--) {
+    planetNum = planetNum - 1;
+  }
+  console.log(planetNum);
 }
 
-populateLeft();
-console.log(planetNum);
-
 function populateLeft() {
-    const planetImg = document.createElement('img');
-    planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
+  const planetImg = document.createElement('img');
+  planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
 
-    decrease()
-    addLeftClass()
+  decrease();
+  addLeftClass();
 }
 
 function populateRight() {
-    const planetImg = document.createElement('img');
-    planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
+  const planetImg = document.createElement('img');
+  planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
 
-    increase()
-    addRightClass();
-    mainContent.appendChild(planetFigure);
-    planetFigure.appendChild(planetImg);
+  increase();
+  addRightClass();
+  mainContent.appendChild(planetFigure);
+  planetFigure.appendChild(planetImg);
 }
 
 function populateMain() {
-    const planetImg = document.createElement('img');
-    const planetName = document.createElement('div');
-    planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
-    
-    planetName.textContent = planet.name;
-    planetFigure.appendChild(planetImg);
-    PlanetFigure.appendChild(planetName);
-}
+  const planetImg = document.createElement('img');
+  const planetName = document.createElement('div');
+  planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
 
+  planetName.textContent = planet.name;
+  planetFigure.appendChild(planetImg);
+  PlanetFigure.appendChild(planetName);
+}
 
 // planets.forEach(planet => {
 //     const planetImg = document.createElement('img');
 //     const planetName = document.createElement('div');
 //     planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
-    
+
 //     planetName.textContent = planet.name;
 //     screen.appendChild(planetImg);
 //     screen.appendChild(planetName);
 //         })
 
-
 // should add 'left' class to planetFigure
 function addLeftClass() {
-    planetFigure.forEach((planet) => {
-        removeActiveClasses()
-        planet.classList.add('left')
-    })
+  planetFigure.forEach((planet) => {
+    removeActiveClasses();
+    planet.classList.add('left');
+  });
 }
 
 // should add 'main' class to planetFigure
 function addMainClass() {
-    planetFigure.forEach((planet) => {
-        removeActiveClasses()
-        planet.classList.add('main')
-    })
+  planetFigure.forEach((planet) => {
+    removeActiveClasses();
+    planet.classList.add('main');
+  });
 }
 
 // should add 'right' class to planetFigure
 function addRightClass() {
-    planetFigure.forEach((planet) => {
-        removeActiveClasses()
-        planet.classList.add('right')
-    })
+  planetFigure.forEach((planet) => {
+    removeActiveClasses();
+    planet.classList.add('right');
+  });
 }
 
 // removes classes from planetFigure
 function removeActiveClasses() {
-    planetFigure.forEach(planet => {
-        planet.classList.remove('left' || 'main' || 'right')
-    })
+  planetFigure.forEach((planet) => {
+    planet.classList.remove('left' || 'main' || 'right');
+  });
 }
-
 
 // const planetLeft = document.querySelector('#leftPlanet');
 // const planetMain = document.querySelector('#mainPlanet');
