@@ -164,3 +164,8 @@ function getRandomPosition() {
 }
 
 addStarField(document.querySelector('body'), 400); */
+
+
+// location?search "javascript parse url params"
+
+// wrap img in anchor and then set the href to characterprofile/index.html?charid=(var)
