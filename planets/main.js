@@ -7,28 +7,23 @@ const buttonLeft = document.querySelector('#buttonLeft');
 const buttonRight = document.querySelector('#buttonRight');
 const mainPlanet = document.querySelector('#mainPlanet');
 
-let planetNum = 1;
+let currentIndex = 15;
 
 buttonRight.addEventListener('click', increase);
 buttonLeft.addEventListener('click', decrease);
 
-populateDOM(planetNum);
+populateDOM(currentIndex);
 
 function increase() {
-  for (let num = 0; num < 1; num++) {
-    planetNum = planetNum + 1;
-  }
-  populateDOM(planetNum);
-  console.log(planetNum);
+  currentIndex += 1;
+  populateDOM(currentIndex);
+  console.log(currentIndex);
 }
-// currentIndex += 1;
 
 function decrease() {
-  for (let num = 2; num > 1; num--) {
-    planetNum = planetNum - 1;
-  }
-  populateDOM(planetNum);
-  console.log(planetNum);
+  currentIndex -= 1;
+  populateDOM(currentIndex);
+  console.log(currentIndex);
 }
 
 function populateDOM(planetIndex) {
@@ -87,7 +82,7 @@ function populateRight() {
 }
 
 function populateMain(planet) {
-  mainPlanet.textContent = planet.name;
+  mainPlanetName.textContent = planet.name;
   // const planetImg = document.createElement('img');
   // const planetName = document.createElement('div');
   // planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planet.id}.jpg`;
