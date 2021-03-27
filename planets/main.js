@@ -13,6 +13,13 @@ function increase() {
     
 }
 
+function decrease() {
+    for (let num = 2; num > 1; num--) {
+        planetNum = planetNum - 1;
+    }
+    
+}
+
 populateLeft();
 console.log(planetNum);
 
@@ -20,15 +27,15 @@ function populateLeft() {
     const planetImg = document.createElement('img');
     planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
 
-    increase()
-    addLeftClass();
-    planetFigure.appendChild(planetImg);
+    decrease()
+    addLeftClass()
 }
 
 function populateRight() {
     const planetImg = document.createElement('img');
     planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
 
+    increase()
     addRightClass();
     mainContent.appendChild(planetFigure);
     planetFigure.appendChild(planetImg);
