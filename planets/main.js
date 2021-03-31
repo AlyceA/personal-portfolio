@@ -6,6 +6,8 @@ const planetFigure = document.querySelectorAll('.planet');
 const buttonLeft = document.querySelector('#buttonLeft');
 const buttonRight = document.querySelector('#buttonRight');
 const mainPlanet = document.querySelector('#mainPlanet');
+const leftPlanet = document.querySelector('#leftPlanet');
+const rightPlanet = document.querySelector('#rightPlanet');
 
 let currentIndex = 15;
 
@@ -32,36 +34,36 @@ function populateDOM(planetIndex) {
   // populateRight(planets[planetIndex + 1]);
 }
 
-// should add 'left' class to planetFigure
-function addLeftClass() {
-  planetFigure.forEach((planet) => {
-    removeActiveClasses();
-    planet.classList.add('left');
-  });
-}
+// // should add 'left' class to planetFigure
+// function addLeftClass() {
+//   planetFigure.forEach((planet) => {
+//     removeActiveClasses();
+//     planet.classList.add('left');
+//   });
+// }
 
-// should add 'main' class to planetFigure
-function addMainClass() {
-  planetFigure.forEach((planet) => {
-    removeActiveClasses();
-    planet.classList.add('main');
-  });
-}
+// // should add 'main' class to planetFigure
+// function addMainClass() {
+//   planetFigure.forEach((planet) => {
+//     removeActiveClasses();
+//     planet.classList.add('main');
+//   });
+// }
 
-// should add 'right' class to planetFigure
-function addRightClass() {
-  planetFigure.forEach((planet) => {
-    removeActiveClasses();
-    planet.classList.add('right');
-  });
-}
+// // should add 'right' class to planetFigure
+// function addRightClass() {
+//   planetFigure.forEach((planet) => {
+//     removeActiveClasses();
+//     planet.classList.add('right');
+//   });
+// }
 
-// removes classes from planetFigure
-function removeActiveClasses() {
-  planetFigure.forEach((planet) => {
-    planet.classList.remove('left', 'main', 'right');
-  });
-}
+// // removes classes from planetFigure
+// function removeActiveClasses() {
+//   planetFigure.forEach((planet) => {
+//     planet.classList.remove('left', 'main', 'right');
+//   });
+// }
 
 function populateLeft() {
   const planetImg = document.createElement('img');
@@ -83,6 +85,7 @@ function populateRight() {
 
 function populateMain(planet) {
   mainPlanetName.textContent = planet.name;
+  mainPlanet.src = `https://starwars-visualguide.com/assets/img/planets/${currentIndex}.jpg`;
   // const planetImg = document.createElement('img');
   // const planetName = document.createElement('div');
   // planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planet.id}.jpg`;
