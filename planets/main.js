@@ -34,57 +34,27 @@ function populateDOM(planetIndex) {
   // populateRight(planets[planetIndex + 1]);
 }
 
-// // should add 'left' class to planetFigure
-// function addLeftClass() {
-//   planetFigure.forEach((planet) => {
-//     removeActiveClasses();
-//     planet.classList.add('left');
-//   });
+// function populateLeft() {
+//   const planetImg = document.createElement('img');
+//   planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${currentIndex - 1}.jpg`;
+
+//   addLeftClass;
+//   planetFigure.appendChild(planetImg);
+//   screen.appendChild(planetFigure);
 // }
 
-// // should add 'main' class to planetFigure
-// function addMainClass() {
-//   planetFigure.forEach((planet) => {
-//     removeActiveClasses();
-//     planet.classList.add('main');
-//   });
+// function populateRight() {
+//   const planetImg = document.createElement('img');
+//   planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
+
+//   addRightClass;
+//   planetFigure.appendChild(planetImg);
+//   screen.appendChild(planetFigure);
 // }
-
-// // should add 'right' class to planetFigure
-// function addRightClass() {
-//   planetFigure.forEach((planet) => {
-//     removeActiveClasses();
-//     planet.classList.add('right');
-//   });
-// }
-
-// // removes classes from planetFigure
-// function removeActiveClasses() {
-//   planetFigure.forEach((planet) => {
-//     planet.classList.remove('left', 'main', 'right');
-//   });
-// }
-
-function populateLeft() {
-  const planetImg = document.createElement('img');
-  planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
-
-  addLeftClass;
-  planetFigure.appendChild(planetImg);
-  screen.appendChild(planetFigure);
-}
-
-function populateRight() {
-  const planetImg = document.createElement('img');
-  planetImg.src = `https://starwars-visualguide.com/assets/img/planets/${planetNum}.jpg`;
-
-  addRightClass;
-  planetFigure.appendChild(planetImg);
-  screen.appendChild(planetFigure);
-}
 
 function populateMain(planet) {
   mainPlanetName.textContent = planet.name;
+  mainPlanetClimate.textContent = planet.climate + " planet";
   mainPlanet.src = `https://starwars-visualguide.com/assets/img/planets/${currentIndex}.jpg`;
   // const planetImg = document.createElement('img');
   // const planetName = document.createElement('div');
