@@ -53,6 +53,14 @@ img {
     border: 5px solid #73BFBF50;
 }
 
-#mainPlanetName {
-    font-size: xx-large;
+#planetNameClimate {
+    background: red;
+}
+
+#rawPlanetData {
+    background: blue;
+}
+
+#surfaceConditions {
+    background: green;
 }
