@@ -17,9 +17,11 @@ async function getAPIData(url) {
 
 function loadPage() {
     getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then(
-        (data) => {
+        async (data) => {
             for (const singlePokemon of data.results) {
-                populatePokeCard(singlePokemon)
+                await getAPIData(singlePokemon.url).then(
+                    (pokeData) => populatePokeCard(pokeData)
+                ) 
             }
             console.log(data)
         }
@@ -32,7 +34,12 @@ function populatePokeCard(singlePokemon) {
     let pokeCard = document.createElement('div')
     pokeCard.className = 'card'
 
+    pokeCard.addEventListener('click', () => {
+        pokeCard.classList.toggle('is-flipped')
+    })
+
     pokeCard.appendChild(populateCardFront(singlePokemon))
+    pokeCard.appendChild(populateCardBack(singlePokemon))
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
 }
@@ -43,7 +50,7 @@ function populateCardFront(pokemon) {
     let frontLabel = document.createElement('p')
     frontLabel.textContent = pokemon.name
     let frontImg = document.createElement('img')
-    frontImg.src = `images/001.png`
+    frontImg.src = `images/${getImageFileName(pokemon)}.png`
     pokeFront.appendChild(frontImg)
 
     pokeFront.appendChild(frontLabel)
@@ -54,5 +61,17 @@ function populateCardBack(pokemon) {
     let pokeBack = document.createElement('div')
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
-    backLabel.textContent = 'back of card'
+    backLabel.textContent = `Moves: ${pokemon.moves.length}`
+
+    pokeBack.appendChild(backLabel)
+    return pokeBack
+}
+
+function getImageFileName(pokemon) {
+    if (pokemon.id < 10) {
+        return `00${pokemon.id}`
+    } else if (pokemon.id > 9 && pokemon.id < 100) {
+        return `0${pokemon.id}`
+    }
+    return `${pokemon.id}`
 }
