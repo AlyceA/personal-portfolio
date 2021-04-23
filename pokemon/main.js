@@ -1,9 +1,11 @@
 const pokeGrid = document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadPokemon')
+const fetchButton = document.querySelector('.fetchPokemonByID')
 
 loadButton.addEventListener('click', () => {
     loadPage()
 })
+
 
 async function getAPIData(url) {
     try {
@@ -23,7 +25,6 @@ function loadPage() {
                     (pokeData) => populatePokeCard(pokeData)
                 ) 
             }
-            console.log(data)
         }
     )
 }
@@ -60,9 +61,20 @@ function populateCardFront(pokemon) {
 function populateCardBack(pokemon) {
     let pokeBack = document.createElement('div')
     pokeBack.className = 'card__face card__face--back'
-    let backLabel = document.createElement('p')
-    backLabel.textContent = `Moves: ${pokemon.moves.length}`
+    let backLabel = document.createElement('div')
+    let statMoves = document.createElement('p')
+    statMoves.textContent = `Number of moves: ${pokemon.moves.length}`
+    let statWeight = document.createElement('p')
+    statWeight.textContent = `Weight: ${getWeightInKg(pokemon)} kg`
+    let statHeight = document.createElement('p')
+    statHeight.textContent = `Height: ${getHeightInM(pokemon)} m`
+    let statType = document.createElement('p')
+    statType.textContent = `Type: ${pokemon.types[0].type.name}`
 
+    backLabel.appendChild(statType)
+    backLabel.appendChild(statWeight)
+    backLabel.appendChild(statHeight)
+    backLabel.appendChild(statMoves)
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
@@ -74,4 +86,14 @@ function getImageFileName(pokemon) {
         return `0${pokemon.id}`
     }
     return `${pokemon.id}`
+}
+
+function getWeightInKg(pokemon) {
+    let weight = (pokemon.weight)/10
+    return weight
+}
+
+function getHeightInM(pokemon) {
+    let height = (pokemon.height)/10
+    return height
 }
