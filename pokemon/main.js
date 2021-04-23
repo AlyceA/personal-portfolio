@@ -68,10 +68,10 @@ function populateCardBack(pokemon) {
     statWeight.textContent = `Weight: ${getWeightInKg(pokemon)} kg`
     let statHeight = document.createElement('p')
     statHeight.textContent = `Height: ${getHeightInM(pokemon)} m`
-    let statType = document.createElement('p')
-    statType.textContent = `Type: ${pokemon.types[0].type.name}`
+    // let statType = document.createElement('p')
+    // statType.textContent = `Type: ${pokemon.types[0].type.name}`
 
-    backLabel.appendChild(statType)
+    // backLabel.appendChild(statType)
     backLabel.appendChild(statWeight)
     backLabel.appendChild(statHeight)
     backLabel.appendChild(statMoves)
