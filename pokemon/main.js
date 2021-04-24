@@ -105,6 +105,7 @@ function populateCardBack(pokemon) {
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('div')
 
+    let statMoves = document.createElement('p')
     let statWeight = document.createElement('p')
     let statHeight = document.createElement('p')
     let statHP = document.createElement('p')
@@ -113,6 +114,7 @@ function populateCardBack(pokemon) {
     let statSpeed = document.createElement('p')
     // let statType = document.createElement('p')
 
+    statMoves.textContent = `Number of Moves: ${pokemon.moves.length}`
     statWeight.textContent = `Weight: ${getWeightInKg(pokemon)} kg`
     statHeight.textContent = `Height: ${getHeightInM(pokemon)} m`
     // statHP.textContent = `HP: ${pokemon.stats[0].base_stat}`
@@ -129,6 +131,7 @@ function populateCardBack(pokemon) {
     backLabel.appendChild(statSpeed)
     backLabel.appendChild(statWeight)
     backLabel.appendChild(statHeight)
+    backLabel.appendChild(statMoves)
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
