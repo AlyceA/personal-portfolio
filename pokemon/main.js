@@ -1,11 +1,17 @@
 const pokeGrid = document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadPokemon')
-const fetchButton = document.querySelector('.fetchPokemonByID')
+const findButton = document.querySelector('.findPokemon')
 
 loadButton.addEventListener('click', () => {
     loadPage()
 })
 
+findButton.addEventListener('click', () => {
+    let pokeID = prompt("Pokemon ID or Name:")
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeID}`).then(
+        (data) => populatePokeCard(data)
+    ).catch(error => console.log(error))
+})
 
 async function getAPIData(url) {
     try {
@@ -14,11 +20,15 @@ async function getAPIData(url) {
         return data
     } catch (error) {
         console.log(error)
+        alert('Pokemon Not Found')
     }
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then(
+    let limit = 25
+    let offset = 0
+
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(
         async (data) => {
             for (const singlePokemon of data.results) {
                 await getAPIData(singlePokemon.url).then(
@@ -51,7 +61,7 @@ function populateCardFront(pokemon) {
     let frontLabel = document.createElement('p')
     frontLabel.textContent = pokemon.name
     let frontImg = document.createElement('img')
-    frontImg.src = `images/${getImageFileName(pokemon)}.png`
+    frontImg.src = getImageFile(pokemon)
     pokeFront.appendChild(frontImg)
 
     pokeFront.appendChild(frontLabel)
@@ -62,30 +72,42 @@ function populateCardBack(pokemon) {
     let pokeBack = document.createElement('div')
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('div')
-    let statMoves = document.createElement('p')
-    statMoves.textContent = `Number of moves: ${pokemon.moves.length}`
+
     let statWeight = document.createElement('p')
-    statWeight.textContent = `Weight: ${getWeightInKg(pokemon)} kg`
     let statHeight = document.createElement('p')
-    statHeight.textContent = `Height: ${getHeightInM(pokemon)} m`
+    let statHP = document.createElement('p')
+    let statAttack = document.createElement('p')
+    let statDefense = document.createElement('p')
+    let statSpeed = document.createElement('p')
     // let statType = document.createElement('p')
+
+    statWeight.textContent = `Weight: ${getWeightInKg(pokemon)} kg`
+    statHeight.textContent = `Height: ${getHeightInM(pokemon)} m`
+    statHP.textContent = `HP: ${pokemon.stats[0].base_stat}`
+    statAttack.textContent = `Attack: ${pokemon.stats[1].base_stat}`
+    statDefense.textContent = `Defense: ${pokemon.stats[2].base_stat}`
+    statSpeed.textContent = `Speed: ${pokemon.stats[5].base_stat}`
+    
     // statType.textContent = `Type: ${pokemon.types[0].type.name}`
 
     // backLabel.appendChild(statType)
+    backLabel.appendChild(statHP)
+    backLabel.appendChild(statAttack)
+    backLabel.appendChild(statDefense)
+    backLabel.appendChild(statSpeed)
     backLabel.appendChild(statWeight)
     backLabel.appendChild(statHeight)
-    backLabel.appendChild(statMoves)
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
 
-function getImageFileName(pokemon) {
-    if (pokemon.id < 10) {
-        return `00${pokemon.id}`
-    } else if (pokemon.id > 9 && pokemon.id < 100) {
-        return `0${pokemon.id}`
-    }
-    return `${pokemon.id}`
+function getImageFile(pokemon) {
+    let pokeID
+    if (pokemon.id < 10) pokeID = `00${pokemon.id}`
+    if (pokemon.id > 9 && pokemon.id < 100) pokeID = `0${pokemon.id}`
+    if (pokemon.id > 99 && pokemon.id < 810) pokeID = `${pokemon.id}`
+
+    return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeID}.png`
 }
 
 function getWeightInKg(pokemon) {
