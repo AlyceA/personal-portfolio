@@ -5,12 +5,30 @@
     font-family: 'Changa', sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 header {
     text-align: center;
 }
 
+.headerImage {
+    display: flex;
+    width: 40vw;
+    height: auto;
+    align-content: center;
+}
+
+button {
+    margin: 20px;
+}
+
 .loadPokemon {
-    background-color: lightseagreen;
+    background-color: #CC0000;
     border: none;
     color: white;
     padding: 5px;
@@ -25,7 +43,7 @@ header {
 }
 
 .findPokemon {
-    background-color: lightslategrey;
+    background-color: #3B4CCA;
     border: none;
     color: white;
     padding: 5px;
@@ -33,6 +51,25 @@ header {
     border-radius: 5px;
     width: 150px;
     font-size: 16px;
+}
+
+.findPokemon:hover {
+    cursor: pointer;
+}
+
+.newPokemon {
+    background-color: #FFDE00;
+    border: none;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 16px;
+}
+
+.newPokemon:hover {
+    cursor: pointer;
 }
 
 .pokeGrid {
@@ -69,7 +106,7 @@ header {
   }
 
 .card__face--front {
-    background: lightcoral;
+    background: silver;
     border-radius: 15px;
     text-align: center;
   }
@@ -88,7 +125,7 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: lightseagreen;
+    background: #B3A125;
     transform: rotateY(180deg);
     border-radius: 15px;
     padding: 15px;

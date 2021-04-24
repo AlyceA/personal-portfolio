@@ -1,16 +1,48 @@
 const pokeGrid = document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadPokemon')
 const findButton = document.querySelector('.findPokemon')
+const newButton = document.querySelector('.newPokemon')
 
 loadButton.addEventListener('click', () => {
     loadPage()
 })
 
 findButton.addEventListener('click', () => {
-    let pokeID = prompt("Pokemon ID or Name:")
+    let pokeID = prompt("Pokemon ID or Name:").toLowerCase()
     getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeID}`).then(
         (data) => populatePokeCard(data)
     ).catch(error => console.log(error))
+})
+
+class Pokemon {
+    constructor(name, weight, height, abilities, moves, types) {
+        this.id = 900
+        this.name = name
+        this.weight = weight
+        this.height = height
+        this.abilities = abilities
+        this.moves = moves
+        this.types = types
+    }
+}
+
+newButton.addEventListener('click', () => {
+    let pokeName = prompt('New Pokemon Name:').toLowerCase()
+    let pokeWeight = prompt('Pokemon Weight:')
+    let pokeHeight = prompt('Pokemon Height:')
+    let pokeAbilities
+    let pokeMoves
+    let pokeTypes
+    let pokeHP
+    let newPokemon = new Pokemon(
+        pokeName, 
+        pokeWeight, 
+        pokeHeight,
+        ['eat', 'sleep'],
+        ['study', 'code', 'silence'],
+        ['normal', 'poison']
+        )
+    populatePokeCard(newPokemon)
 })
 
 async function getAPIData(url) {
@@ -83,10 +115,10 @@ function populateCardBack(pokemon) {
 
     statWeight.textContent = `Weight: ${getWeightInKg(pokemon)} kg`
     statHeight.textContent = `Height: ${getHeightInM(pokemon)} m`
-    statHP.textContent = `HP: ${pokemon.stats[0].base_stat}`
-    statAttack.textContent = `Attack: ${pokemon.stats[1].base_stat}`
-    statDefense.textContent = `Defense: ${pokemon.stats[2].base_stat}`
-    statSpeed.textContent = `Speed: ${pokemon.stats[5].base_stat}`
+    // statHP.textContent = `HP: ${pokemon.stats[0].base_stat}`
+    // statAttack.textContent = `Attack: ${pokemon.stats[1].base_stat}`
+    // statDefense.textContent = `Defense: ${pokemon.stats[2].base_stat}`
+    // statSpeed.textContent = `Speed: ${pokemon.stats[5].base_stat}`
     
     // statType.textContent = `Type: ${pokemon.types[0].type.name}`
 
@@ -106,7 +138,9 @@ function getImageFile(pokemon) {
     if (pokemon.id < 10) pokeID = `00${pokemon.id}`
     if (pokemon.id > 9 && pokemon.id < 100) pokeID = `0${pokemon.id}`
     if (pokemon.id > 99 && pokemon.id < 810) pokeID = `${pokemon.id}`
-
+    if (pokemon.id === 900) {
+        return `images/pokeball_PNG21.png`
+    }
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeID}.png`
 }
 
