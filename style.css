@@ -11,11 +11,153 @@
   /* CSS to make a hamburger nav menu https://codepen.io/erikterwan/pres/EVzeRP */
 
   body {
-    font-family: acumin-pro-wide, sans-serif;
-    font-size: x-large;
+    font-family: hero-new, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url('images/Site\ Background\ Pattern\ -\ Rabbit\ Hole.svg');
+    background-repeat: repeat;
+    background-size: 110%;
   }
 
-  #home {
+/* Formatting the side hero image */
+
+  .graphic {
+    /* position: relative; */
+    width: 33vw;
+    height: 120vh;
+  }
+
+  .gradient {
+    width: 90%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #D9B2B0, #FBE195);
+  }
+
+/* Formatting the intro text */
+
+  .intro {
+    /* position: relative; */
+    top: 0;
+    right: 1.5em;
+    width: 66vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 48;
+    margin-bottom: 1em;
+  }
+
+  .about {
+    width: 65%;
+    text-align: center;
+    font-size: 18;
+  }
+
+/* Formatting for the CTA */
+
+  .CTA {
+    /* position: fixed; */
+    right: 1.5em;
+    bottom: 1.5em;
+    width: 66vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95px;
+    width: 375px;
+    background: #D9B2B0;
+    border-radius: 12px;
+    box-shadow: 0px 0px 12px #00000050;
+  }
+
+  .buttonLink {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: xx-large;
+    color: #F2F2F2;
+  }
+
+  .buttonLink:visited {
+    color: #F2F2F2;
+  }
+
+/* CSS for hamburger menu */
+  .hamburger {
+    position: fixed;
+    z-index: 100;
+    top: 1rem;
+    right: 1rem;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: none;
+  }
+
+  .close {
+    display: none;
+    font-size: 500%;
+    color: #F2F2F2;
+  }
+
+  .add {
+    font-size: 500%;
+  }
+
+  .nav-list {
+    position: fixed;
+    z-index: 99;
+    top: 1em;
+    right: 0;
+    width: 66vw;
+    height: 10vh;
+    background: #00000080;
+    color: black;
+    transform: translateX(100%);
+    transition: transform 0.5s;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 60px;
+  }
+
+  .navLink {
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: 600;
+    padding-right: 1em;
+    color: #F2F2F2;
+  }
+
+  .navLink:visited {
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: 600;
+    padding-right: 1em;
+    color: #F2F2F2;
+  }
+
+  .showNav {
+    transform: translateX(0)
+  }
+
+  /* #home {
     display: flex;
   }
 
@@ -126,7 +268,7 @@
 
   .contact-image {
     height: 100px;
-  }
+  } */
 
   /* @media (max-width: 100em) {
     html {

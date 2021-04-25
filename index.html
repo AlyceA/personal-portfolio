@@ -6,115 +6,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="https://use.typekit.net/snp1dox.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-    <div id="home">
-        <div id="name-logo">
-            <h1>Alyce Adams</h1>
-            <img src="images/Logo CORRECT yellow.svg" id="logo"/>
-        </div>
-        <nav id="sidenav">
-            <a href="#coding-section">
-                <div id="coding-projects" class="sidebar">
-                    <h1>Coding Projects</h1>
-                </div>
-            </a>
-            <a href="#design-section">
-                <div id="design-projects" class="sidebar">
-                    <h1>Design Projects</h1>
-                </div>
-            </a>
-            <a href="#contact-section">
-                <div id="contact" class="sidebar">
-                    <h1>Get in Touch</h1>
-                </div>
-            </a>
-        </nav>
-    </div>
-
-    <div id="coding-section">
-            <h2>
-                Coding Projects
-            </h2>
-            <div class="grid">
-                <a href="https://codepen.io/alycea/pen/bGwZgQR" target="_blank" class="project-tile">
-                    <img class="tile-image" src="images/Button-White.png"/>
-                    <p>
-                        Personal Interest Page
-                    </p>
-                </a>
-                <a href="characters/index.html" target="_blank" class="project-tile">
-                    <img class="tile-image" src="images/BB8 White.svg"/>
-                    <p>
-                        Star Wars Characters
-                    </p>
-                </a>
-                <a href="pokemon/index.html" target="_blank" class="project-tile">
-                    <img class="tile-image" src="images/Pokemon.svg"/>
-                    <p>
-                        Pokemon Cards
-                    </p>
-                </a>
+    <nav>
+        <button class='hamburger'>
+        <span class='material-icons add'>add</span>
+        <span class='material-icons close'>close</span>
+        </button>
+        <ul class='nav-list'>
+            <li><a class='navLink' href='#home'>Home</a></li>
+            <li><a class='navLink' href='#projects'>Projects</a></li>
+            <li><a class='navLink' href='#contact'>Contact</a></li>
+        </ul>
+    </nav>
+    <div id='home'>
+        <div class='graphic'>
+            <div class='gradient'>
             </div>
-    </div>
-
-    <div id="design-section">
-        <h2>
-            Design Projects
-        </h2>
-        <div class="grid">
-            <a href="images/Digital Icons for Graphic User Interfaces.pdf" target="_blank" class="project-tile">
-                <img class="tile-image" src="images/Digital Icons Lamp.svg"/>
-                <p>
-                    Digital Icons
-                </p>
-            </a>
-            <a href="images/Space Element.pdf" target="_blank" class="project-tile">
-                <img class="tile-image" src="images/Space Element Icon.svg"/>
-                <p>
-                    Space Element
-                </p>
-            </a>
-            <a href="images/Vector Shape Creation.pdf" target="_blank" class="project-tile">
-                <img class="tile-image" src="images/Vector Shape Creation Poison Icon.svg"/>
-                <p>
-                    Vector Shape Creation
-                </p>
-            </a>
+            <div class='illustration'>
+            </div>
         </div>
-    </div>
-    
-    <div id="contact-section">
-        <h2>
-            Get in Touch
-        </h2>
-        <div id="contact-grid">
-            <a href="https://github.com/AlyceA" target="_blank">
-                <div class="contact-tile">
-                    <img class="contact-image" src="images/GitHub White.svg"/>
-                    <p>
-                        GitHub
-                    </p>
-                </div>
-            </a>
-            <a href="mailto:alyad101@gmail.com" target="_blank">
-                <div class="contact-tile">
-                    <img class="contact-image" src="images/Gmail White.svg"/>
-                    <p>
-                        Email
-                    </p>
-                </div>
-            </a>
-            <a href="https://www.linkedin.com/in/alyce-adams-620438144/" target="_blank">
-                <div class="contact-tile">
-                    <img class="contact-image" src="images/LinkedIn White.svg"/>
-                    <p>
-                    LinkedIn 
-                    </p>
+        <div class='intro'>
+            <div class='header'>
+                <h1>Hello World!</h1>
+            </div>
+            <div class='about'>
+                <p>My name is Alyce Adams. I’m currently a student at UVU studying Web Development with an emphasis in Interaction and Design. I love to create. Web Development and Design is the perfect meld of creativity and logic. If you see anything that interests you, don’t be afraid to reach out!</p>
+            </div>
+        </div>
+        <div class='CTA'>
+            <a href='#projects' class='buttonLink'>
+                <div class='button'>
+                    <p>PORTFOLIO</p>
                 </div>
             </a>
         </div>
     </div>
+    <div id='projects'>
+        <div class='grid'>
+            <!-- INSERT PROJECT GRID -->
+        </div>
+    </div>
+    <div id='contact'>
+        <a href="https://github.com/AlyceA" target="_blank">
+            <div class="contact-tile">
+                <img class="contact-image"/>
+                <p>
+                    GitHub
+                </p>
+            </div>
+        </a>
+        <a href="mailto:alyad101@gmail.com" target="_blank">
+            <div class="contact-tile">
+                <img class="contact-image"/>
+                <p>
+                    Email
+                </p>
+            </div>
+        </a>
+        <a href="https://www.linkedin.com/in/alyce-adams-620438144/" target="_blank">
+            <div class="contact-tile">
+                <img class="contact-image"/>
+                <p>
+                LinkedIn
+                </p>
+            </div>
+        </a>
+    </div>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
+
+<!-- <div id="home">
+    <div id="name-logo">
+        <h1>Alyce Adams</h1>
+        <img src="images/Logo CORRECT yellow.svg" id="logo"/>
+    </div>
+    <nav id="sidenav">
+        <a href="#coding-section">
+            <div id="coding-projects" class="sidebar">
+                <h1>Coding Projects</h1>
+            </div>
+        </a>
+        <a href="#design-section">
+            <div id="design-projects" class="sidebar">
+                <h1>Design Projects</h1>
+            </div>
+        </a>
+        <a href="#contact-section">
+            <div id="contact" class="sidebar">
+                <h1>Get in Touch</h1>
+            </div>
+        </a>
+    </nav>
+</div>
+
+<div id="coding-section">
+        <h2>
+            Coding Projects
+        </h2>
+        <div class="grid">
+            <a href="https://codepen.io/alycea/pen/bGwZgQR" target="_blank" class="project-tile">
+                <img class="tile-image" src="images/Button-White.png"/>
+                <p>
+                    Personal Interest Page
+                </p>
+            </a>
+            <a href="characters/index.html" target="_blank" class="project-tile">
+                <img class="tile-image" src="images/BB8 White.svg"/>
+                <p>
+                    Star Wars Characters
+                </p>
+            </a>
+            <a href="pokemon/index.html" target="_blank" class="project-tile">
+                <img class="tile-image" src="images/Pokemon.svg"/>
+                <p>
+                    Pokemon Cards
+                </p>
+            </a>
+        </div>
+</div>
+
+<div id="design-section">
+    <h2>
+        Design Projects
+    </h2>
+    <div class="grid">
+        <a href="images/Digital Icons for Graphic User Interfaces.pdf" target="_blank" class="project-tile">
+            <img class="tile-image" src="images/Digital Icons Lamp.svg"/>
+            <p>
+                Digital Icons
+            </p>
+        </a>
+        <a href="images/Space Element.pdf" target="_blank" class="project-tile">
+            <img class="tile-image" src="images/Space Element Icon.svg"/>
+            <p>
+                Space Element
+            </p>
+        </a>
+        <a href="images/Vector Shape Creation.pdf" target="_blank" class="project-tile">
+            <img class="tile-image" src="images/Vector Shape Creation Poison Icon.svg"/>
+            <p>
+                Vector Shape Creation
+            </p>
+        </a>
+    </div>
+</div>
+
+<div id="contact-section">
+    <h2>
+        Get in Touch
+    </h2>
+    <div id="contact-grid">
+        <a href="https://github.com/AlyceA" target="_blank">
+            <div class="contact-tile">
+                <img class="contact-image" src="images/GitHub White.svg"/>
+                <p>
+                    GitHub
+                </p>
+            </div>
+        </a>
+        <a href="mailto:alyad101@gmail.com" target="_blank">
+            <div class="contact-tile">
+                <img class="contact-image" src="images/Gmail White.svg"/>
+                <p>
+                    Email
+                </p>
+            </div>
+        </a>
+        <a href="https://www.linkedin.com/in/alyce-adams-620438144/" target="_blank">
+            <div class="contact-tile">
+                <img class="contact-image" src="images/LinkedIn White.svg"/>
+                <p>
+                LinkedIn 
+                </p>
+            </div>
+        </a>
+    </div>
+</div> -->
