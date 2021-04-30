@@ -88,6 +88,10 @@
   margin-bottom: 2em;
 }
 
+.house {
+  transform: scaleX(-1);
+}
+
 .grid {
   width: 98vw;
   display: grid;

@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(116, 64, 64);
+}
+
+.back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+.back:visited {
+    color: white;
+}
+
+h1 {
+    align-self: center;
+    padding: 1em;
+    color: white;
+}
+
+.senate {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.congressGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    height: 15em;
+    background: radial-gradient(#d3d3d380, #d3d3d300);
+    margin: 1em;
+}
+
+.profileDiv > p {
+    color: white;
+    padding: .4em;
+}
+
+.profileDiv > img {
+    border: solid 1px gray;
+    border-radius: 25px;
+}
+
+button {
+    background-color: rgb(90, 21, 21);
+    border: none;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: xx-large;
+    border-radius: 25px;
+    cursor: pointer;
+}
