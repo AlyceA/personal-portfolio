@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    font-family: aviano-future, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+}
+
+.graphic {
+    height: 100px;
+    width: 100px;
+}
+
+.database-image {
+    height: 200px;
+    width: 200px;
+}
