@@ -15,6 +15,17 @@ body{
     margin: 0;
 }
 
+.back {
+    position:absolute;
+    top: 1px;
+    left: 10px;
+    color: black;
+}
+
+.back:visited {
+    color: black;
+}
+
 .container {
     display: flex;
     justify-content: center;

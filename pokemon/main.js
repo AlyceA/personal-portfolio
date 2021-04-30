@@ -4,10 +4,12 @@ const findButton = document.querySelector('.findPokemon')
 const newButton = document.querySelector('.newPokemon')
 
 loadButton.addEventListener('click', () => {
+    removeChildren(pokeGrid)
     loadPage()
 })
 
 findButton.addEventListener('click', () => {
+    removeChildren(pokeGrid)
     let pokeID = prompt("Pokemon ID or Name:").toLowerCase()
     getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeID}`).then(
         (data) => populatePokeCard(data)
@@ -27,6 +29,7 @@ class Pokemon {
 }
 
 newButton.addEventListener('click', () => {
+    removeChildren(pokeGrid)
     let pokeName = prompt('New Pokemon Name:').toLowerCase()
     let pokeWeight = prompt('Pokemon Weight:')
     let pokeHeight = prompt('Pokemon Height:')
@@ -122,7 +125,7 @@ function populateCardBack(pokemon) {
     // statDefense.textContent = `Defense: ${pokemon.stats[2].base_stat}`
     // statSpeed.textContent = `Speed: ${pokemon.stats[5].base_stat}`
     
-    // statType.textContent = `Type: ${pokemon.types[0].type.name}`
+    // statType.textContent = `Type: ${getType(pokemon)}`
 
     // backLabel.appendChild(statType)
     backLabel.appendChild(statHP)
@@ -134,6 +137,16 @@ function populateCardBack(pokemon) {
     backLabel.appendChild(statMoves)
     pokeBack.appendChild(backLabel)
     return pokeBack
+}
+
+function getType(pokemon) {
+    let pokeType1 = pokemon.types[0].type.name
+    if (pokemon.types.length > 1) {
+        let pokeType2 = pokemon.types[1].type.name
+        return [pokeType1, pokeType2]
+    } else {
+        return pokeType1
+    }
 }
 
 function getImageFile(pokemon) {
@@ -155,4 +168,10 @@ function getWeightInKg(pokemon) {
 function getHeightInM(pokemon) {
     let height = (pokemon.height)/10
     return height
+}
+
+function removeChildren(container) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
 }
