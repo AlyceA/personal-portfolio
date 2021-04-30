@@ -12,14 +12,15 @@
     <a id='back' href='/starwars/'><h1>&lt; Back</h1></a>
     <h1>Planet Database</h1>
     <main id="main">
-        <nav></nav>
         <div id="screen">
-            <div><button id="buttonLeft" class="button">previous</button></div>
                 <div id='planetImage'><img id='displayedPlanet'/></div>
                 <div id="planetNameClimate">
                     <div id='planetName'></div>
                     <div id='planetClimate'></div>
                     <div id='planetPopulation'></div>
+                </div>
+                <div class='barchart graphic'>
+                    <img src='/images/barchart.svg'/>
                 </div>
                 <div id='rawPlanetData'>
                     <div id='planetRotationalPeriod'></div>
@@ -27,13 +28,50 @@
                     <div id='planetDiameter'></div>
                     <div id='planetGravity'></div>
                 </div>
+                <div class ='linechart graphic'>
+                    <img src='/images/linechart.svg'/>
+                </div>
                 <div id='surfaceConditions'>
                     <div id='surfaceWater'></div>
                     <div id='terrain'></div>
                     <div id='climate'></div>
                 </div>
-            <div><button id="buttonRight" class="button">next</button></div>
-        </nav>
+                <div class='radar graphic'>
+                    <img src='/images/radar.svg'/>
+                </div>
+                <div class='hexagons graphic'>
+                    <img src='/images/hexagons.svg'/>
+                </div>
+                <div class='levels graphic'>
+                    <img src='/images/levels.svg'/>
+                </div>
+                <div>
+                    <nav>
+                        <ul id='navList'>
+                            <li class='planetNav'>Tatooine</li>
+                            <li class='planetNav'>Alderaan</li>
+                            <li class='planetNav'>Yavin IV</li>
+                            <li class='planetNav'>Hoth</li>
+                            <li class='planetNav'>Dagobah</li>
+                            <li class='planetNav'>Bespin</li>
+                            <li class='planetNav'>Endor</li>
+                            <li class='planetNav'>Naboo</li>
+                            <li class='planetNav'>Coruscant</li>
+                            <li class='planetNav'>Kamino</li>
+                            <li class='planetNav'>Geonosis</li>
+                            <li class='planetNav'>Utapau</li>
+                            <li class='planetNav'>Mustafar</li>
+                            <li class='planetNav'>Kashyyyk</li>
+                            <li class='planetNav'>Polis Massa</li>
+                            <li class='planetNav'>Mygeeto</li>
+                            <li class='planetNav'>Felucia</li>
+                            <li class='planetNav'>Cato Neimoidia</li>
+                            <li class='planetNav'>Saleucami</li>
+                            <li class='planetNav'>Stewjon</li>
+                            <li class='planetNav'>Eriadu</li>
+                        </ul>
+                    </nav>
+                </div>
     </main>
     <script src="main.js" type="module"></script>
 </body>

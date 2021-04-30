@@ -1,39 +1,35 @@
+// Planet information screen with a "nav" or "list" of planets on the right-hand side. Planet information will include planet image, planet name, planet climate, rotational period, orbital period, diameter, gravity, surface water, terrain, and population.
+
 import { planets } from '../../data/planets.js';
 
-const mainContent = document.querySelector('main');
-const screen = document.querySelector('#screen');
-const buttonLeft = document.querySelector('#buttonLeft');
-const buttonRight = document.querySelector('#buttonRight');
 const displayedPlanet = document.querySelector('#displayedPlanet');
 
-let currentIndex = 15;
+populateDOM(1);
 
-buttonRight.addEventListener('click', increase);
-buttonLeft.addEventListener('click', decrease);
+let items = document.getElementsByClassName("planetNav");
 
-populateDOM(currentIndex);
+for (let i = 0; i < items.length; i++) {
+  let indexName = 'Tatooine'
+  items[i].addEventListener("click", function(e) {
+    indexName = e.target.innerText;
+    getIndex(indexName);
+  });
+};
 
-function increase() {
-  currentIndex += 1;
-  populateDOM(currentIndex);
-  console.log(currentIndex);
+function getIndex(planetName) {
+  let index = planets.findIndex(item => item.name === planetName);
+  populateDOM(index);
 }
 
-function decrease() {
-  currentIndex -= 1;
-  populateDOM(currentIndex);
-  console.log(currentIndex);
+function populateDOM(index) {
+  populateMain(planets[index], index);
 }
 
-function populateDOM(planetIndex) {
-  populateMain(planets[planetIndex]);
-}
-
-function populateMain(planet) {
+//populates all divs with dynamic planet data
+function populateMain(planet, index) {
   planetName.textContent = planet.name;
   planetClimate.textContent = planet.climate + " planet";
   planetPopulation.textContent = 'population ' + planet.population;
-  displayedPlanet.src = `https://starwars-visualguide.com/assets/img/planets/${currentIndex}.jpg`;
   planetRotationalPeriod.textContent = 'rotational period: ' + planet.rotation_period;
   planetOrbitalPeriod.textContent = 'orbital period: ' + planet.orbital_period;
   planetDiameter.textContent = 'diameter: ' + planet.diameter;
@@ -41,6 +37,5 @@ function populateMain(planet) {
   surfaceWater.textContent = 'surface water: ' + planet.surface_water;
   terrain.textContent = 'terrain: ' + planet.terrain;
   climate.textContent = 'climate: ' + planet.climate;
+  displayedPlanet.src = `https://starwars-visualguide.com/assets/img/planets/${index + 2}.jpg`;
 }
-
-// Planet information screen with a "nav" or "list" of planets on the left-hand side. Planet information will include planet image, planet name, planet climate, rotational period, orbital period, diameter, gravity, surface water, terrain, and population.
