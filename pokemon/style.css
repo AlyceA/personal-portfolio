@@ -12,6 +12,17 @@ body {
     justify-content: center;
 }
 
+.back {
+    position: absolute;
+    top: 1px;
+    left: 10px;
+    color: #CC0000;
+}
+
+.back:visited {
+    color: #CC0000;
+}
+
 header {
     text-align: center;
 }
