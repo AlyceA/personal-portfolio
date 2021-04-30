@@ -4,10 +4,21 @@
 }
 
 body {
-    background-image: url(../images/GRID.svg);
+    background-image: url(../../images/GRID.svg);
     color: white;
     font-family: aviano-future, sans-serif;
     font-weight: 700;
+}
+
+#nav {
+    position: absolute;
+    top: 1px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#nav:visited {
+    color: white;
 }
 
 #main {

@@ -10,6 +10,15 @@ body {
     font-weight: 700;
 }
 
+#back {
+    position: absolute;
+    top: 1px;
+}
+
+#back:visited {
+    color: white;
+}
+
 #main {
     display: flex;
     flex-wrap: wrap;

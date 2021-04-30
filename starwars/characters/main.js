@@ -1,4 +1,4 @@
-import { people } from '../data/people.js';
+import { people } from '../../data/people.js';
 
 const mainContent = document.querySelector('main');
 

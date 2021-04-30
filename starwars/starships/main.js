@@ -1,4 +1,4 @@
-import { starships } from "../data/starships.js";
+import { starships } from "../../data/starships.js";
 
 const main = document.querySelector('main');
 const navList = document.querySelector('.navList');
