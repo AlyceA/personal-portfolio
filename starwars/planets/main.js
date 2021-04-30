@@ -37,5 +37,5 @@ function populateMain(planet, index) {
   surfaceWater.textContent = 'surface water: ' + planet.surface_water;
   terrain.textContent = 'terrain: ' + planet.terrain;
   climate.textContent = 'climate: ' + planet.climate;
-  displayedPlanet.src = `https://starwars-visualguide.com/assets/img/planets/${index + 2}.jpg`;
+  displayedPlanet.src = `https://starwars-visualguide.com/assets/img/planets/${index + 2}.jpg`; 
 }

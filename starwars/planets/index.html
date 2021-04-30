@@ -13,29 +13,34 @@
     <h1>Planet Database</h1>
     <main id="main">
         <div id="screen">
+            <div class='column1'>
                 <div id='planetImage'><img id='displayedPlanet'/></div>
                 <div id="planetNameClimate">
-                    <div id='planetName'></div>
-                    <div id='planetClimate'></div>
-                    <div id='planetPopulation'></div>
+                    <div class='dataList' id='planetName'></div>
+                    <div class='dataList' id='planetClimate'></div>
+                    <div class='dataList' id='planetPopulation'></div>
                 </div>
                 <div class='barchart graphic'>
-                    <img src='/images/barchart.svg'/>
+                    <img src='/images/barchart-short.svg'/>
                 </div>
+            </div>
+            <div class='column2'>   
                 <div id='rawPlanetData'>
-                    <div id='planetRotationalPeriod'></div>
-                    <div id='planetOrbitalPeriod'></div>
-                    <div id='planetDiameter'></div>
-                    <div id='planetGravity'></div>
+                    <div class='dataList' id='planetRotationalPeriod'></div>
+                    <div class='dataList' id='planetOrbitalPeriod'></div>
+                    <div class='dataList' id='planetDiameter'></div>
+                    <div class='dataList' id='planetGravity'></div>
                 </div>
                 <div class ='linechart graphic'>
-                    <img src='/images/linechart.svg'/>
+                    <img src='/images/linechart-wide.svg'/>
                 </div>
                 <div id='surfaceConditions'>
-                    <div id='surfaceWater'></div>
-                    <div id='terrain'></div>
-                    <div id='climate'></div>
+                    <div class='dataList' id='surfaceWater'></div>
+                    <div class='dataList' id='terrain'></div>
+                    <div class='dataList' id='climate'></div>
                 </div>
+            </div>
+            <div class='column3'>
                 <div class='radar graphic'>
                     <img src='/images/radar.svg'/>
                 </div>
@@ -45,7 +50,9 @@
                 <div class='levels graphic'>
                     <img src='/images/levels.svg'/>
                 </div>
-                <div>
+            </div>
+            <div class='column4'>
+                <div class='planetList'>
                     <nav>
                         <ul id='navList'>
                             <li class='planetNav'>Tatooine</li>
@@ -72,6 +79,7 @@
                         </ul>
                     </nav>
                 </div>
+            </div>  
     </main>
     <script src="main.js" type="module"></script>
 </body>
