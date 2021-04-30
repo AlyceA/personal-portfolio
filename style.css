@@ -82,6 +82,19 @@
     color: #F2F2F2;
   }
 
+/*CSS for project grid*/
+
+.grid-image > img {
+  height: 300px;
+}
+
+
+/*CSS for contact grid*/
+.contact-image {
+  height: 150px;
+}
+
+
 /* CSS for hamburger menu */
   .hamburger {
     position: fixed;
