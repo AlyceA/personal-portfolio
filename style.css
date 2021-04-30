@@ -17,19 +17,12 @@
     background-size: 110%;
   }
 
-/* Formatting the side hero image */
-
 #home {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
 
-  .graphic { 
-    height: vh;
-  }
-
 /* Formatting the intro text */
-
   .intro {
     display: flex;
     flex-direction: column;
@@ -50,14 +43,11 @@
   }
 
 /* Formatting for the CTA */
-
   .CTA {
-    width: 66vw;
-    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 7rem;
   }
 
   .button {
@@ -83,15 +73,87 @@
   }
 
 /*CSS for project grid*/
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5em;
+}
 
 .grid-image > img {
   height: 300px;
 }
 
+.grid-image {
+  margin-bottom: 2em;
+}
+
+.grid {
+  width: 98vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 7em;
+  row-gap: 7em;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+}
+
+.grid-item:visited {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+}
+
+.grid-caption > p {
+  text-align: center;
+}
 
 /*CSS for contact grid*/
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15em;
+  margin-bottom: 5em;
+}
+
+#contact-grid {
+  width: 98vw;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+}
+
 .contact-image {
   height: 150px;
+}
+
+.contact-tile {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.contact-tile:visited {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+
+/*CSS for footer*/
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
 }
 
 
