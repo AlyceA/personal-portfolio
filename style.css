@@ -19,28 +19,22 @@
 
 /* Formatting the side hero image */
 
-  .graphic {
-    width: 33vw;
-    height: 120vh;
-  }
+#home {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
 
-  .gradient {
-    width: 90%;
-    height: 100%;
-    background: linear-gradient(to bottom right, #D9B2B0, #FBE195);
+  .graphic { 
+    height: vh;
   }
 
 /* Formatting the intro text */
 
   .intro {
-    top: 0;
-    right: 1.5em;
-    width: 66vw;
-    height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   h1 {
@@ -58,13 +52,12 @@
 /* Formatting for the CTA */
 
   .CTA {
-    right: 1.5em;
-    bottom: 1.5em;
     width: 66vw;
     height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3rem;
   }
 
   .button {
